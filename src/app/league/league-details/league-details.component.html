@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="form-group">
+    <div class="row" *ngIf="league">
+      <div *ngIf="!editMode">
+        {{ league.name }}
+      </div>
+      <div *ngIf="editMode">
+        <input [(ngModel)]="league.name" />
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary"
+              *ngIf="!editMode"
+              (click)="onEdit()">
+        <fa name="pencil"></fa>
+        Edit
+      </button>
+      <button class="btn btn-primary"
+              *ngIf="editMode"
+              (click)="onCancel()">
+        <fa name="times"></fa>
+        Cancel
+      </button>
+      <button class="btn btn-primary"
+              *ngIf="editMode"
+              (click)="onSave()">
+        <fa name="floppy-o"></fa>
+        Save
+      </button>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { RadioControlValueAccessor } from '@angular/forms';
 export class BowlPickListComponent implements OnInit {
 
   bowlGames: BowlGame[] = [];
+  userName: string;
 
   constructor() { }
 
@@ -27,10 +28,11 @@ export class BowlPickListComponent implements OnInit {
 
   setSelectedTeam($event: any, id: number) {
     let value: string = $event.target.value;
+    let index = id - 1;
     if (value === 'favorite') {
-      this.bowlGames[id - 1].userTeamPick = this.bowlGames[id - 1].favoriteTeam;
+      this.bowlGames[index].userTeamPick = this.bowlGames[index].favoriteTeam;
     } else {
-      this.bowlGames[id - 1].userTeamPick = this.bowlGames[id - 1].underdogTeam;
+      this.bowlGames[index].userTeamPick = this.bowlGames[index].underdogTeam;
     }
   }
 }

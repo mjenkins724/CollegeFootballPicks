@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="form-group">
+    <div class="row" *ngFor="let league of leagues$ | async">
+      <div>
+        <a routerLink="/leagueDetails/{{ league.id }}">
+          {{ league.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

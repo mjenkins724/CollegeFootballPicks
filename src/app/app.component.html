@@ -1,2 +1,23 @@
-<h1>{{ title }}</h1>
-<app-bowl-pick-list></app-bowl-pick-list>
+<ul class="navbar navbar-expand-lg navbar-light bg-info">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="/league">Leagues</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="/pickList">Make Bowl Picks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="/">Standings</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Admin</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" routerLink="/">League Management</a>
+          <a class="dropdown-item" routerLink="/">Game Score</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ul>
+<router-outlet></router-outlet>
